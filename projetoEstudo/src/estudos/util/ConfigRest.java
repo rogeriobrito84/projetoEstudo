@@ -6,6 +6,7 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
+import estudos.servicos.LoginServico;
 import estudos.servicos.TesteServico;
 
 @ApplicationPath("/servico")
@@ -16,9 +17,10 @@ public class ConfigRest extends Application{
 	
 	@Override
 	public Set<Class<?>> getClasses() {
-		final Set<Class<?>> returnValue = new HashSet<Class<?>>( );
-		returnValue.add(TesteServico.class);
-		return returnValue;
+		final Set<Class<?>> classes = new HashSet<Class<?>>( );
+		classes.add(TesteServico.class);
+		classes.add(LoginServico.class);
+		return classes;
 	}
 	
 }
